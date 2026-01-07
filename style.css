@@ -21,10 +21,8 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  height: 100%;
-  overflow-y: scroll;
+  /* Removed scroll-snap for natural sizing */
 }
 
 body {
@@ -33,7 +31,6 @@ body {
   color: var(--text-main);
   overflow-x: hidden;
   line-height: 1.6;
-  min-height: 100%;
 }
 
 /* Utilities */
@@ -44,17 +41,16 @@ body {
 }
 
 section {
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  min-height: 100vh;
+  padding: 80px 0; /* Consistent padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  /* Removed min-height: 100vh to fit content */
 }
 
 footer {
-  scroll-snap-align: center;
+  /* Removed scroll-snap-align */
 }
 
 a {
@@ -64,6 +60,10 @@ a {
 }
 
 /* Typography & Effects */
+p {
+  text-align: justify; /* Default justify for paragraphs */
+}
+
 .gradient-text {
   background: linear-gradient(
     to right,
@@ -73,6 +73,24 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+  width: 50px; /* Slightly larger */
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Vibrant Gradient */
+  color: white; /* White icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(60, 211, 122, 0.4); /* Glow effect */
+  transition: transform 0.3s ease;
+}
+
+.info-item .icon:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .btn {
@@ -302,7 +320,10 @@ a {
 .about-text {
   flex: 1;
 }
+.pj {
+  text-align: justify;
 
+}
 .about-text p {
   color: var(--text-muted);
   font-size: 1.1rem;
