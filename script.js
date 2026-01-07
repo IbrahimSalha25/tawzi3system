@@ -98,4 +98,82 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Privacy Policy Modal Handling
+  const privacyLink = document.getElementById("privacyLink");
+  const privacyModal = document.getElementById("privacyModal");
+  const closePrivacyModal = document.querySelector(".close-modal");
+  const closePrivacyBtn = document.querySelector(".close-modal-btn");
+
+  if (privacyLink && privacyModal) {
+    privacyLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      privacyModal.style.display = "block";
+      document.body.style.overflow = "hidden"; // Disable scroll
+    });
+
+    const closeModal = () => {
+      privacyModal.style.display = "none";
+      document.body.style.overflow = "auto"; // Enable scroll
+    };
+
+    if (closePrivacyModal) {
+      closePrivacyModal.addEventListener("click", closeModal);
+    }
+    
+    if (closePrivacyBtn) {
+        closePrivacyBtn.addEventListener("click", closeModal);
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target == privacyModal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && privacyModal.style.display === "block") {
+            closeModal();
+        }
+    });
+  }
+
+  // License Agreement Modal Handling
+  const licenseLink = document.getElementById("licenseLink");
+  const licenseModal = document.getElementById("licenseModal");
+  const closeLicenseModal = document.querySelector(".close-license");
+  const closeLicenseBtn = document.querySelector(".close-license-btn");
+
+  if (licenseLink && licenseModal) {
+    licenseLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      licenseModal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+
+    const closeLicModal = () => {
+      licenseModal.style.display = "none";
+      document.body.style.overflow = "auto";
+    };
+
+    if (closeLicenseModal) {
+      closeLicenseModal.addEventListener("click", closeLicModal);
+    }
+
+    if (closeLicenseBtn) {
+      closeLicenseBtn.addEventListener("click", closeLicModal);
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target == licenseModal) {
+        closeLicModal();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && licenseModal.style.display === "block") {
+        closeLicModal();
+      }
+    });
+  }
 });
