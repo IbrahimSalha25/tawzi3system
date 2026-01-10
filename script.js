@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   const elementsToAnimate = document.querySelectorAll(
-    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col"
+    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col, .success-card, .testimonial-card"
   );
 
   elementsToAnimate.forEach((el) => {
