@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   // License Agreement Modal Handling
   const licenseLink = document.getElementById("licenseLink");
   const licenseModal = document.getElementById("licenseModal");
@@ -176,4 +177,144 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Testimonials Carousel
+  const carousel = document.querySelector('.testimonials-carousel');
+  if (carousel) {
+    const track = carousel.querySelector('.testimonials-track');
+    const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    
+    let currentIndex = 0;
+    let cardsPerView = 3;
+    let autoPlayInterval;
+    
+    // Calculate cards per view based on screen size
+    const updateCardsPerView = () => {
+      if (window.innerWidth <= 768) {
+        cardsPerView = 1;
+      } else if (window.innerWidth <= 1024) {
+        cardsPerView = 2;
+      } else {
+        cardsPerView = 3;
+      }
+    };
+    
+    // Create dots
+    const createDots = () => {
+      dotsContainer.innerHTML = '';
+      const totalDots = Math.ceil(cards.length / cardsPerView);
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+    };
+    
+    // Update dots
+    const updateDots = () => {
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    };
+    
+    // Move to specific slide
+    const goToSlide = (index) => {
+      const maxIndex = Math.ceil(cards.length / cardsPerView) - 1;
+      currentIndex = Math.max(0, Math.min(index, maxIndex));
+      
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 30;
+      const offset = -(currentIndex * cardsPerView * (cardWidth + gap));
+      
+      track.style.transform = `translateX(${offset}px)`;
+      updateDots();
+    };
+    
+    // Next slide
+    const nextSlide = () => {
+      const maxIndex = Math.ceil(cards.length / cardsPerView) - 1;
+      if (currentIndex < maxIndex) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(0); // Loop back to start
+      }
+    };
+    
+    // Previous slide
+    const prevSlide = () => {
+      if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      } else {
+        const maxIndex = Math.ceil(cards.length / cardsPerView) - 1;
+        goToSlide(maxIndex); // Loop to end
+      }
+    };
+    
+    // Auto play
+    const startAutoPlay = () => {
+      autoPlayInterval = setInterval(nextSlide, 5000);
+    };
+    
+    const stopAutoPlay = () => {
+      clearInterval(autoPlayInterval);
+    };
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      prevSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    });
+    
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      nextSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    });
+    
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    
+    // Touch support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+    
+    const handleSwipe = () => {
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+      }
+    };
+    
+    // Resize handler
+    window.addEventListener('resize', () => {
+      updateCardsPerView();
+      createDots();
+      goToSlide(0);
+    });
+    
+    // Initialize
+    updateCardsPerView();
+    createDots();
+    goToSlide(0);
+    startAutoPlay();
+  }
 });
+
