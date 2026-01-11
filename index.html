@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Outfit:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -74,7 +74,6 @@
     </section>
 
     <!-- 1. About Section -->...
-    
     <section id="about" class="about">
       <div class="container">
         <div class="about-content">
@@ -173,8 +172,8 @@
             </div>
             <h3>التوزيع الذكي والسريع</h3>
             <p>
-              آلية توزيع للطرود تعتمد على مسح بطاقة المستفيد (QR Code/Barcode)
-              لضمان السرعة ومنع التكرار.
+              آلية توزيع للطرود تعتمد على مسح بطاقة المستفيد (QR Code) لضمان
+              السرعة ومنع التكرار.
             </p>
           </div>
           <div class="feature-card">
@@ -225,15 +224,24 @@
         <p class="section-subtitle">(أرقام حية تعكس واقع الإنجاز)</p>
         <div class="impact-grid">
           <div class="impact-item">
-            <div class="number">+08</div>
+            <div class="impact-icon">
+              <i class="fa-solid fa-tents"></i>
+            </div>
+            <div class="number" data-target="8">+08</div>
             <div class="label">مخيم ومركز إيواء</div>
           </div>
           <div class="impact-item">
-            <div class="number">+1100</div>
+            <div class="impact-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="number" data-target="1100">+1100</div>
             <div class="label">مستفيد</div>
           </div>
           <div class="impact-item">
-            <div class="number">+1800</div>
+            <div class="impact-icon">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <div class="number" data-target="1800">+1800</div>
             <div class="label">بطاقة ذكية مصدرة</div>
           </div>
         </div>
@@ -313,151 +321,9 @@
       </div>
     </section>
 
-    <!-- 6. Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <h2 class="section-title">رسائل من الميدان</h2>
 
-        <div class="testimonials-carousel">
-          <div class="carousel-container">
-            <div class="testimonials-track">
-              <!-- Testimonial 1 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "ننظام توزيع غيّر طريقة عملنا بالكامل. كنا نستغرق ساعات في
-                  تنظيم الطوابير، الآن العملية تتم في دقائق وبكرامة تامة
-                  للمستفيدين."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-user"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>أحمد محمد</h4>
-                    <span>مدير مركز إيواء</span>
-                  </div>
-                </div>
-              </div>
+    
 
-              <!-- Testimonial 2 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "الشفافية التي يوفرها النظام للمانحين مذهلة. يمكننا الآن تتبع
-                  كل طرد ومعرفة مكانه بدقة، مما زاد من ثقة الممولين بنا."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-user-tie"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>سارة علي</h4>
-                    <span>منسقة مشاريع إغاثية</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 3 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "كمتطوع، كنت أعاني من الفوضى والضغط النفسي. مع توزيع، أصبح
-                  عملي منظماً جداً وأستطيع خدمة عدد مضاعف من الناس براحة."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-user-group"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>خالد يوسف</h4>
-                    <span>متطوع ميداني</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 4 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "بفضل النظام، أصبحت عملية التوزيع عادلة وشفافة. لم يعد هناك
-                  مجال للمحسوبية أو التكرار، وهذا ما كنا نحتاجه بشدة."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-user-shield"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>فاطمة حسن</h4>
-                    <span>مسؤولة مخزون</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 5 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "التقارير التي يولدها النظام ساعدتنا في اتخاذ قرارات مبنية على
-                  بيانات حقيقية. أصبح لدينا رؤية واضحة للاحتياجات والفجوات."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-chart-line"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>يوسف إبراهيم</h4>
-                    <span>محلل بيانات</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 6 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
-                </div>
-                <p class="testimonial-text">
-                  "كمستفيدة، أشعر بالكرامة عند استلام مساعدتي. لا مزيد من
-                  الطوابير الطويلة أو الانتظار تحت الشمس. العملية أصبحت سريعة
-                  ومحترمة."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <i class="fa-solid fa-heart"></i>
-                  </div>
-                  <div class="author-info">
-                    <h4>مريم عبد الله</h4>
-                    <span>مستفيدة</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Buttons -->
-          <button class="carousel-btn prev" aria-label="السابق">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-          <button class="carousel-btn next" aria-label="التالي">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
-          <!-- Dots Indicator -->
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </section>
 
     <!-- 7. Target Audience -->
     <section id="audience" class="audience">
@@ -503,28 +369,32 @@
           "توزيع" عبر:
         </p>
         <div class="support-grid">
-          <div class="support-card">
+          <div class="support-card featured">
             <h3>كفالة مخيم</h3>
-            <div class="amount">150$</div>
+            <div class="support-visual">
+              <div class="amount">150$</div>
+            </div>
             <p>تغطية تكاليف تشغيل النظام لمركز إيواء كامل.</p>
             <a
               href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D9%83%D9%81%D8%A7%D9%84%D8%A9%20%D9%85%D8%AE%D9%8A%D9%85%20%D8%A3%D9%88%20%D8%A7%D9%84%D8%AA%D8%A8%D8%B1%D8%B9%20%D9%84%D8%AF%D8%B9%D9%85%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
               target="_blank"
               class="btn btn-primary"
-              >تبرع الآن</a
+              >كفالة الآن</a
             >
           </div>
           <div class="support-card">
             <h3>دعم التطوير</h3>
-            <div class="icon-box">
-              <i class="fa-solid fa-code"></i>
+            <div class="support-visual">
+              <div class="icon-box">
+                <i class="fa-solid fa-code"></i>
+              </div>
             </div>
             <p>المساهمة في تكاليف السيرفرات وتطوير خصائص جديدة للنظام.</p>
             <a
               href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D9%81%D9%8A%20%D8%AF%D8%B9%D9%85%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
               target="_blank"
               class="btn btn-secondary"
-              >تبرع الآن</a
+              >ادعم التطوير</a
             >
           </div>
         </div>
@@ -642,8 +512,14 @@
             <ul>
               <!-- <li><a href="#">شاركنا رأيك</a></li> -->
               <li><a href="#">LinkedIn</a></li>
-              <li><a href="https://github.com/IbrahimSalha25" target="_blank">GitHub</a></li>
-              <li><a href="mailto:ibrahimsalha19@gmail.com">البريد الإلكتروني</a></li>
+              <li>
+                <a href="https://github.com/IbrahimSalha25" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a href="mailto:ibrahimsalha19@gmail.com">البريد الإلكتروني</a>
+              </li>
             </ul>
           </div>
           <div class="footer-col">
