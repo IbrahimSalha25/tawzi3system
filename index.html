@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -328,28 +328,29 @@
       </div>
     </section>
 
-    <!-- 6. Testimonials Section (Carousel) -->
+    <!-- 6. Testimonials Section (Professional Carousel) -->
     <section id="testimonials" class="testimonials">
       <div class="container">
         <h2 class="section-title">قالوا عن "توزيع"</h2>
-        
-        <div class="testimonials-carousel" id="testimonialCarousel">
-          <div class="testimonials-viewport">
-            <div class="testimonials-track" id="track">
+
+        <div class="testimonials-wrapper">
+          <!-- Main carousel container -->
+          <div class="testimonials-container">
+            <div class="testimonials-track" id="testimonialsTrack">
               <!-- Card 1 -->
               <div class="testimonial-card">
                 <div class="quote-icon">
                   <i class="fa-solid fa-quote-right"></i>
                 </div>
                 <p class="testimonial-text">
-                  "ساهم النظام في تسهيل عملية التوزيع،
-                   ومعرفة عدد الأسر الموجودة داخل المخيم، والحد من التكدس أثناء عملية التوزيع،
-                   بالإضافة إلى تسهيل وصول الكابونات إلى جميع المستفيدين بشكل منظم وعادل."
+                  "ساهم النظام في تسهيل عملية التوزيع، ومعرفة عدد الأسر الموجودة
+                  داخل المخيم، والحد من التكدس أثناء عملية التوزيع، بالإضافة إلى
+                  تسهيل وصول الكابونات إلى جميع المستفيدين بشكل منظم وعادل."
                 </p>
                 <div class="testimonial-author">
                   <div class="author-avatar">
                     <img
-                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed&backgroundColor=c0aede"
+                      src="assets\photo_feadback_01.jpeg"
                       alt="مدير مركز إيواء"
                     />
                   </div>
@@ -366,7 +367,8 @@
                   <i class="fa-solid fa-quote-right"></i>
                 </div>
                 <p class="testimonial-text">
-"أصبحت عملية التوزيع أكثر عدالة وإنصافًا للجميع، مع ضمان الاستلام في الوقت المناسب وبدون أي تكدس."
+                  "أصبحت عملية التوزيع أكثر عدالة وإنصافًا للجميع، مع ضمان
+                  الاستلام في الوقت المناسب وبدون أي تكدس."
                 </p>
                 <div class="testimonial-author">
                   <div class="author-avatar">
@@ -388,13 +390,15 @@
                   <i class="fa-solid fa-quote-right"></i>
                 </div>
                 <p class="testimonial-text">
-                  "نظام التسجيل والإحصاء سلس جدًا، ويسهّل علينا التعامل مع أعداد كبيرة من الأشخاص والبيانات الإحصائية، كما يساعد بشكل أكبر على حصر الفئات الموجودة. إضافةً إلى ذلك،
-                   يساهم بشكل فعّال في تنظيم عملية توزيع الطرود بشكل أفضل."
+                  "نظام التسجيل والإحصاء سلس جدًا، ويسهّل علينا التعامل مع أعداد
+                  كبيرة من الأشخاص والبيانات الإحصائية، كما يساعد بشكل أكبر على
+                  حصر الفئات الموجودة. إضافةً إلى ذلك، يساهم بشكل فعّال في تنظيم
+                  عملية توزيع الطرود بشكل أفضل."
                 </p>
                 <div class="testimonial-author">
                   <div class="author-avatar">
                     <img
-                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Layla&backgroundColor=ffd5dc"
+                      src="assets\photo_feadback_02.png"
                       alt="متطوعة ميدانية"
                     />
                   </div>
@@ -404,20 +408,30 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-          
+
           <!-- Navigation Controls -->
-          <button class="carousel-btn prev" aria-label="السابق">
+          <button
+            class="carousel-control prev"
+            id="prevBtn"
+            aria-label="السابق"
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
-          <button class="carousel-btn next" aria-label="التالي">
+          <button
+            class="carousel-control next"
+            id="nextBtn"
+            aria-label="التالي"
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <div class="carousel-dots"></div>
         </div>
+
+        <!-- Indicators/Dots -->
+        <div class="carousel-indicators" id="carouselIndicators"></div>
       </div>
+    </section>
 
     <!-- 7. Target Audience -->
     <section id="audience" class="audience">
@@ -605,7 +619,7 @@
             <h3>روابط هامة</h3>
             <ul>
               <!-- <li><a href="#">شاركنا رأيك</a></li> -->
-              <li><a href="#">LinkedIn</a></li>
+              <li><a href="https://t.me/ibrahim_salha19">LinkedIn</a></li>
               <li>
                 <a href="https://github.com/IbrahimSalha25" target="_blank"
                   >GitHub</a

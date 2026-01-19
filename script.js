@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const elementsToAnimate = document.querySelectorAll(
-    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col, .success-card"
+    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col, .success-card",
   );
 
   elementsToAnimate.forEach((el) => {
@@ -205,26 +205,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // Testimonials Carousel (Auto-Play Infinite Loop)
-  const carouselContainer = document.querySelector(".testimonials-carousel");
-  if (carouselContainer) {
-    const track = carouselContainer.querySelector(".testimonials-track");
-    const cards = Array.from(track.querySelectorAll(".testimonial-card"));
-    const prevBtn = carouselContainer.querySelector(".prev");
-    const nextBtn = carouselContainer.querySelector(".next");
-    const dotsContainer = carouselContainer.querySelector(".carousel-dots");
 
-    // RTL Detection
+  // ============================================
+  // PROFESSIONAL TESTIMONIALS CAROUSEL
+  // ============================================
+
+  const track = document.getElementById("testimonialsTrack");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const indicatorsContainer = document.getElementById("carouselIndicators");
+
+  if (track && prevBtn && nextBtn && indicatorsContainer) {
+    const cards = Array.from(track.querySelectorAll(".testimonial-card"));
     const isRTL = document.documentElement.dir === "rtl";
 
     // Configuration
-    const gap = 30; // Must match CSS
-    const autoPlayDelay = 3000; // 3 seconds
+    const gap = 30; // Must match CSS gap
+    const autoPlayDelay = 5000; // 5 seconds
     let autoPlayTimer;
     let isTransitioning = false;
-    let cardsPerView = 3;
+    let currentIndex = 0;
+    let cardsPerView = 3; // Default desktop
 
-    // Determine cards per view based on CSS breakpoints
+    // Calculate cards per view based on window width
     const updateCardsPerView = () => {
       if (window.innerWidth <= 768) {
         cardsPerView = 1;
@@ -234,162 +237,113 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsPerView = 3;
       }
     };
-    updateCardsPerView();
 
-    // 1. Create Clones for Infinite Loop
-    const clonesCount = 3; // Number of clones at each end
+    // Clone cards for infinite loop effect
+    const cloneCount = cardsPerView;
 
-    // Clone for start (Prepend) - These will appear "before" the first item (Right side in RTL)
-    // Clone selection: The *last* items match the *first* visible slots if we scroll backwards
-    // Actually, simply cloning the last N items to the front
-    for (let i = 0; i < clonesCount; i++) {
-      const clone = cards[cards.length - 1 - i].cloneNode(true);
+    // Clone last cards and prepend
+    for (let i = cards.length - 1; i >= cards.length - cloneCount; i--) {
+      const clone = cards[i].cloneNode(true);
       clone.classList.add("clone");
       track.prepend(clone);
     }
 
-    // Clone for end (Append)
-    for (let i = 0; i < clonesCount; i++) {
+    // Clone first cards and append
+    for (let i = 0; i < cloneCount; i++) {
       const clone = cards[i].cloneNode(true);
       clone.classList.add("clone");
       track.appendChild(clone);
     }
 
-    // 2. Initialize Position
-    let currentIndex = clonesCount;
+    // Initialize position
+    currentIndex = cloneCount;
 
+    // Calculate slide width (card width + gap)
     const getSlideWidth = () => {
       const card = track.querySelector(".testimonial-card");
       if (!card) return 0;
-      const rect = card.getBoundingClientRect();
-      return rect.width + gap;
+      return card.getBoundingClientRect().width + gap;
     };
 
-    const updateTrackPosition = (transition = true) => {
+    // Update track position
+    const updateTrackPosition = (animate = true) => {
       const slideWidth = getSlideWidth();
-      // In RTL, "Next" items are to the Left (negative direction physically from start).
-      // However, the Track starts at the Right edge of the container.
-      // Clones (Prepend) are to the Right of the Start?
-      // Wait, Prepend adds before the firstChild.
-      // In RTL Flexbox: First Child is Rightmost.
-      // So Prepend adds to the Right of the First Child.
-      // So the layout is: [ClonePrepend 3][ClonePrepend 2][ClonePrepend 1][Real 1][Real 2]...
-      // (Right ----> Left)
-      // Visual Viewport starts aligned with... ?
-      // Flex container usually clips to the "Start".
-      // So Viewport sees [ClonePrepend 3][ClonePrepend 2][ClonePrepend 1].
-      // We want to see [Real 1].
-      // [Real 1] is to the LEFT of the Prepend Clones.
-      // So we need to move the Track LEFT (Negative TranslateX) to reveal [Real 1].
+      // RTL: positive offset moves track right, negative moves left
+      // In RTL, "next" content is to the left, so we need positive offset
+      const direction = isRTL ? 1 : -1;
+      const offset = currentIndex * slideWidth * direction;
 
-      // Let's re-verify Standard RTL Behavior in Chrome:
-      // translateX(-100px) moves element Left.
-      // If content is [CP3][CP2][CP1][Real1]... and Viewport is at [CP3]...
-      // Moving Track LEFT by 3 units puts [Real1] in Viewport.
-      // So offset should be NEGATIVE?
-
-      // But user reported "invisible".
-      // If I used negative before and it was invisible...
-      // Maybe the browser is placing the "Start" at the Left Edge even in RTL?
-      // Or maybe `translateX` works differently?
-
-      // To be absolutely robust, we use a multiplier.
-      // If negative didn't work, we try positive.
-      // But logic suggests Negative is correct for "Moving Camera Right" / "Moving Content Left".
-
-      // Let's Try Positive: If I move Track RIGHT (+), I see what is to the Left of the Start? No.
-      // Move Track RIGHT (+) -> Shows what is to the Left of the Start (overflow-left).
-      // Wait. [Out of View Left] [Viewport] [Out of View Right]
-      // Content: [CP3][CP2][CP1] [Real1]...
-      // If aligned Right.
-      // Viewport sees [CP3][...].
-      // [Real1] is Left of Viewport.
-      // To bring [Real1] into Viewport, we must shift the content RIGHT?
-      //   [Real1] -> needs to go Right to be in Viewport.
-      //   So Track must translate POSITIVE.
-
-      // YES. In RTL, "Next" content is to the Left. To see it, we move the "Strip" to the Right so the "Left Content" enters the frame.
-      // Update: It depends on where the transform origin is or coordinate system.
-      // Let's assume POSITIVE is needed for RTL.
-
-      const directionMultiplier = isRTL ? 1 : -1;
-      const offset = currentIndex * slideWidth * directionMultiplier;
-
-      track.style.transition = transition
-        ? "transform 0.5s ease-in-out"
+      track.style.transition = animate
+        ? "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)"
         : "none";
       track.style.transform = `translateX(${offset}px)`;
     };
 
-    // Initial positioning
-    setTimeout(() => {
-      updateTrackPosition(false);
-      track.style.opacity = 1; // Fade in track after positioning to prevent flash using CSS later if needed
-    }, 50);
-
-    // 3. Dots
-    const createDots = () => {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = "";
-      cards.forEach((_, i) => {
-        const dot = document.createElement("div");
-        dot.classList.add("carousel-dot");
+    // Create indicator dots
+    const createIndicators = () => {
+      indicatorsContainer.innerHTML = "";
+      for (let i = 0; i < cards.length; i++) {
+        const dot = document.createElement("button");
+        dot.classList.add("carousel-indicator");
+        dot.setAttribute("aria-label", `الانتقال إلى الشهادة ${i + 1}`);
         if (i === 0) dot.classList.add("active");
-
         dot.addEventListener("click", () => {
-          const targetIndex = clonesCount + i;
-          currentIndex = targetIndex;
-          updateTrackPosition(true);
-          updateActiveDot(i);
+          currentIndex = cloneCount + i;
+          updateTrackPosition();
+          updateIndicators(i);
           resetAutoPlay();
         });
-        dotsContainer.appendChild(dot);
-      });
+        indicatorsContainer.appendChild(dot);
+      }
     };
 
-    const updateActiveDot = (realIndex) => {
-      const dots = dotsContainer.querySelectorAll(".carousel-dot");
+    // Update active indicator
+    const updateIndicators = (index) => {
+      const dots = indicatorsContainer.querySelectorAll(".carousel-indicator");
       dots.forEach((d) => d.classList.remove("active"));
-      if (dots[realIndex]) dots[realIndex].classList.add("active");
+      if (dots[index]) dots[index].classList.add("active");
     };
 
-    createDots();
-
-    // 4. Movement logic
+    // Navigate to next slide
     const nextSlide = () => {
       if (isTransitioning) return;
       isTransitioning = true;
       currentIndex++;
-      updateTrackPosition(true);
+      updateTrackPosition();
     };
 
+    // Navigate to previous slide
     const prevSlide = () => {
       if (isTransitioning) return;
       isTransitioning = true;
       currentIndex--;
-      updateTrackPosition(true);
+      updateTrackPosition();
     };
 
+    // Handle transition end (for infinite loop)
     track.addEventListener("transitionend", () => {
       isTransitioning = false;
-      const totalReal = cards.length;
+      const totalCards = cards.length;
 
-      // Handle Infinite Loop
-      if (currentIndex >= totalReal + clonesCount) {
-        currentIndex = clonesCount;
-        updateTrackPosition(false);
-      }
-      if (currentIndex < clonesCount) {
-        currentIndex = currentIndex + totalReal;
+      // If we're past the last real card, jump to first
+      if (currentIndex >= totalCards + cloneCount) {
+        currentIndex = cloneCount;
         updateTrackPosition(false);
       }
 
-      let dotIndex = (currentIndex - clonesCount) % totalReal;
-      if (dotIndex < 0) dotIndex += totalReal;
-      updateActiveDot(dotIndex);
+      // If we're before the first real card, jump to last
+      if (currentIndex < cloneCount) {
+        currentIndex = cloneCount + totalCards - cardsPerView;
+        updateTrackPosition(false);
+      }
+
+      // Update indicator to match current card
+      let indicatorIndex = (currentIndex - cloneCount) % totalCards;
+      if (indicatorIndex < 0) indicatorIndex += totalCards;
+      updateIndicators(indicatorIndex);
     });
 
-    // 5. Auto Play
+    // Auto-play functionality
     const startAutoPlay = () => {
       stopAutoPlay();
       autoPlayTimer = setInterval(nextSlide, autoPlayDelay);
@@ -404,35 +358,82 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoPlay();
     };
 
-    startAutoPlay();
+    // Touch/Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-    // Controls
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        // In RTL, Next button (Left arrow) should go to "Next" item (visually Left item).
-        // Logic `nextSlide` increases index.
-        // Index++ -> moves offset further Positive -> Moves Track Right -> Shows Left Items.
-        // Yes.
-        nextSlide();
-        resetAutoPlay();
-      });
-    }
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+      },
+      { passive: true },
+    );
 
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        resetAutoPlay();
-      });
-    }
+    track.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoPlay();
+      },
+      { passive: true },
+    );
 
+    const handleSwipe = () => {
+      const threshold = 50;
+      const swipeDistance = touchStartX - touchEndX;
+
+      if (Math.abs(swipeDistance) > threshold) {
+        if (swipeDistance > 0) {
+          // Swipe left
+          if (isRTL) {
+            prevSlide();
+          } else {
+            nextSlide();
+          }
+        } else {
+          // Swipe right
+          if (isRTL) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+      }
+    };
+
+    // Button click handlers
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      resetAutoPlay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetAutoPlay();
+    });
+
+    // Pause on hover
     track.addEventListener("mouseenter", stopAutoPlay);
     track.addEventListener("mouseleave", startAutoPlay);
 
+    // Handle window resize
     window.addEventListener("resize", () => {
       updateCardsPerView();
       updateTrackPosition(false);
     });
+
+    // Initialize
+    updateCardsPerView();
+    createIndicators();
+    setTimeout(() => {
+      updateTrackPosition(false);
+      startAutoPlay();
+    }, 100);
   }
+
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mainNav = document.getElementById("mainNav");
   const closeNavBtn = document.getElementById("closeNavBtn");
