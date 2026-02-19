@@ -732,6 +732,200 @@ p {
   font-weight: 700;
 }
 
+/* App Showcase Section Refined */
+.app-showcase {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(60, 211, 122, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(254, 113, 1, 0.03) 0%,
+      transparent 50%
+    ),
+    #ffffff;
+  padding: 120px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-content {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Increased gap */
+}
+
+.app-info {
+  flex: 1;
+  z-index: 2;
+}
+
+.app-info .badge {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(60, 211, 122, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.app-info h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 900;
+  color: var(--secondary-color);
+}
+
+.app-info .pj {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  max-width: 90%;
+}
+
+.app-features-list {
+  list-style: none;
+  margin: 30px 0;
+}
+
+.app-features-list li {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.app-features-list li i {
+  color: var(--primary-color);
+  background: rgba(60, 211, 122, 0.1);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.download-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  margin-top: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  max-width: fit-content;
+}
+
+.download-text p {
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.app-mockups {
+  flex: 1.2; /* Slightly larger for the image */
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mockup-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mockup-wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.main-mockup {
+  width: 100%;
+  max-width: 650px; /* Adjusted for horizontal image */
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
+  border-radius: 20px; /* In case it has sharp edges */
+}
+
+.mockup-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 65%);
+  opacity: 0.1;
+  filter: blur(60px);
+  z-index: 1;
+}
+
+.app-footer-note {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.app-footer-note p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: #f8fafc;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 1px solid #eef2f6;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .app-showcase {
+    padding: 80px 0;
+  }
+  .app-content {
+    flex-direction: column-reverse; /* Mockup on top for mobile */
+    text-align: center;
+    gap: 50px;
+  }
+  .app-info .section-title {
+    text-align: center !important;
+  }
+  .app-features-list {
+    display: inline-block;
+    text-align: right;
+  }
+  .app-features-list li {
+    justify-content: flex-start;
+  }
+  .download-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .app-info .pj {
+    max-width: 100%;
+  }
+}
+
 /* Audience Section */
 .audience {
   padding: 100px 0;
@@ -1941,7 +2135,6 @@ p {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
-
 
 /* Navigation Controls - Professional Design */
 .carousel-control {

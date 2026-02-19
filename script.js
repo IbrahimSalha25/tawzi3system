@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const elementsToAnimate = document.querySelectorAll(
-    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col, .success-card",
+    ".feature-card, .hero-title, .hero-subtitle, .hero-buttons, .section-title, .vision-content, .audience-card, .impact-item, .support-card, .cta-item, .footer-col, .success-card, .app-info, .app-mockups",
   );
 
   elementsToAnimate.forEach((el) => {
