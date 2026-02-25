@@ -763,11 +763,7 @@ p {
 }
 
 .app-info .badge {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: #1b4136;
   color: white;
   padding: 8px 20px;
   border-radius: 50px;
@@ -1024,7 +1020,7 @@ p {
   z-index: 0;
 }
 
-.impact .container {
+.impact {
   position: relative;
   z-index: 1;
 }
