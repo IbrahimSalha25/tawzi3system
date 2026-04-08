@@ -362,4 +362,19 @@ body {
 
 /* Testimonial Enhanced Polish */
 .testi-card { padding: 3rem 2.5rem; border-top: 4px solid var(--primary); border-radius: 16px; background: linear-gradient(to bottom, #ffffff, #f8fafc); box-shadow: 0 10px 25px rgba(0,0,0,0.04); }
-.testi-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+}
+
+/* Final Polish Revisions */
+.stat-item-row { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 1.2rem; margin-bottom: 1.2rem; width: 100%; }
+.stat-item-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.stat-item-row .stat-label { font-size: 1.1rem; font-weight: 700; color: #475569; }
+.stat-item-row .stat-num { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+
+.portal-exclusive .btn-portal { text-decoration: none !important; color: white !important; }
+.portal-exclusive:hover a, .portal-exclusive a { text-decoration: none !important; }
+
+.testi-card { padding: 2rem 1.5rem !important; }
+.testi-card .q-text { font-size: 0.95rem !important; line-height: 1.7 !important; margin-bottom: 1.2rem !important; }
+.testi-card .quote-icon { font-size: 3.5rem !important; top: 1rem !important; right: 1rem !important; opacity: 0.5; }
+
+.partner-logo-hover { transform-origin: left center; }
