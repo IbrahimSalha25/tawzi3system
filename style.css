@@ -340,5 +340,26 @@ body {
     .contact-info-side { border-right: none; border-top: 1px solid rgba(0,0,0,0.03); }
     .footer-wrapper { flex-direction: column; text-align: center; justify-content: center; }
     .footer-brand { flex-direction: column; }
-    .footer-links-small { flex-wrap: wrap; justify-content: center; }
 }
+
+/* Extraordinary Polish Extensions */
+.partner-logo-hover { height: 40px; object-fit: contain; filter: grayscale(100%) opacity(0.6); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+.partner-logo-hover:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
+
+/* Impact Gradient Typography */
+.stat-gradient-1 { background: linear-gradient(135deg, #0ea5e9, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-gradient-2 { background: linear-gradient(135deg, #f97316, #c2410c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-gradient-3 { background: linear-gradient(135deg, #22c55e, #15803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Portal Exclusive Integration */
+.portal-exclusive { background: linear-gradient(145deg, #0f172a, #1e293b); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1); border-radius: 20px; }
+.portal-exclusive::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% -20%, rgba(16,185,129,0.2) 0%, rgba(0,0,0,0) 60%); z-index: 0; pointer-events: none; }
+.portal-exclusive:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-color: rgba(16,185,129,0.3); }
+.portal-exclusive:hover .portal-icon-wrapper { background: rgba(16,185,129,0.15); color: var(--primary); transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 25px rgba(16,185,129,0.2); }
+.portal-icon-wrapper { width: 80px; height: 80px; margin: 0 auto; background: rgba(255,255,255,0.03); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: #fff; transition: all 0.4s ease; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
+.opacity-80 { opacity: 0.8; }
+.justify-center { justify-content: center; }
+
+/* Testimonial Enhanced Polish */
+.testi-card { padding: 3rem 2.5rem; border-top: 4px solid var(--primary); border-radius: 16px; background: linear-gradient(to bottom, #ffffff, #f8fafc); box-shadow: 0 10px 25px rgba(0,0,0,0.04); }
+.testi-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
