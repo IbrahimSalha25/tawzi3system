@@ -293,7 +293,8 @@ body {
 
 /* NGO Styles Refinements */
 .story-ngo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.story-text-ngo { font-size: 1.15rem; line-height: 1.9; color: #475569; text-align: justify; margin-bottom: 1.5rem; }
+.story-text-ngo { font-size: 1.15rem; line-height: 1.9; color: #475569; text-align: right; margin-bottom: 1.5rem; }
+.story-text-ngo.lead { font-size: 1.25rem; font-weight: 700; color: var(--primary); border-right: 4px solid var(--primary); padding-right: 1.5rem; background: rgba(16,185,129,0.03); padding-top: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; border-radius: 0 12px 12px 0; }
 .img-grid-ngo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .img-ngo-main { grid-column: 1 / -1; width: 100%; height: 300px; object-fit: cover; border-radius: 12px; }
 .img-ngo-sub { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; }
@@ -351,13 +352,14 @@ body {
 .stat-gradient-2 { background: linear-gradient(135deg, #f97316, #c2410c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 .stat-gradient-3 { background: linear-gradient(135deg, #22c55e, #15803d); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 
-/* Portal Exclusive Integration */
-.portal-exclusive { background: linear-gradient(145deg, #0f172a, #1e293b); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1); border-radius: 20px; }
-.portal-exclusive::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% -20%, rgba(16,185,129,0.2) 0%, rgba(0,0,0,0) 60%); z-index: 0; pointer-events: none; }
-.portal-exclusive:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-color: rgba(16,185,129,0.3); }
-.portal-exclusive:hover .portal-icon-wrapper { background: rgba(16,185,129,0.15); color: var(--primary); transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 25px rgba(16,185,129,0.2); }
-.portal-icon-wrapper { width: 80px; height: 80px; margin: 0 auto; background: rgba(255,255,255,0.03); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: #fff; transition: all 0.4s ease; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
-.opacity-80 { opacity: 0.8; }
+/* Portal Clean Integration */
+.portal-clean { background: #fff; border: 1px solid #e2e8f0; transition: var(--transition); border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; padding: 2.5rem; z-index: 1; height: 100%; }
+.portal-clean:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.06); transform: translateY(-5px); border-color: rgba(16,185,129,0.3); }
+.portal-header { border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 1.5rem; width: 100%; }
+.p-icon-wrapper { width: 80px; height: 80px; background: rgba(16,185,129,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: var(--primary); margin: 0 auto; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.portal-clean:hover .p-icon-wrapper { transform: scale(1.1) rotate(-8deg); background: var(--primary); color: #fff; box-shadow: 0 10px 25px rgba(16,185,129,0.2); }
+.btn-outline-primary { border: 2px solid var(--primary); color: var(--primary); background: transparent; transition: all 0.3s ease; }
+.btn-outline-primary:hover { background: var(--primary); color: #fff; box-shadow: 0 10px 20px rgba(16,185,129,0.2); transform: translateY(-2px); }
 .justify-center { justify-content: center; }
 
 /* Testimonial Enhanced Polish */
@@ -370,8 +372,7 @@ body {
 .stat-item-row .stat-label { font-size: 1.1rem; font-weight: 700; color: #475569; }
 .stat-item-row .stat-num { font-size: 2.2rem; font-weight: 900; line-height: 1; }
 
-.portal-exclusive .btn-portal { text-decoration: none !important; color: white !important; }
-.portal-exclusive:hover a, .portal-exclusive a { text-decoration: none !important; }
+.portal-clean a, .portal-clean:hover a { text-decoration: none !important; }
 
 .testi-card { padding: 2rem 1.5rem !important; }
 .testi-card .q-text { font-size: 0.95rem !important; line-height: 1.7 !important; margin-bottom: 1.2rem !important; }
