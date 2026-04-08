@@ -347,9 +347,9 @@ body {
 .partner-logo-hover:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
 
 /* Impact Gradient Typography */
-.stat-gradient-1 { background: linear-gradient(135deg, #0ea5e9, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.stat-gradient-2 { background: linear-gradient(135deg, #f97316, #c2410c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.stat-gradient-3 { background: linear-gradient(135deg, #22c55e, #15803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-gradient-1 { background: linear-gradient(135deg, #0ea5e9, #0284c7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.stat-gradient-2 { background: linear-gradient(135deg, #f97316, #c2410c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.stat-gradient-3 { background: linear-gradient(135deg, #22c55e, #15803d); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 
 /* Portal Exclusive Integration */
 .portal-exclusive { background: linear-gradient(145deg, #0f172a, #1e293b); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1); border-radius: 20px; }
