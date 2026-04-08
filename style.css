@@ -290,3 +290,55 @@ body {
     .contact-info-panel, .contact-form-panel { text-align: center; }
     .display-flex { justify-content: center; }
 }
+
+/* NGO Styles Refinements */
+.story-ngo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.story-text-ngo { font-size: 1.15rem; line-height: 1.9; color: #475569; text-align: justify; margin-bottom: 1.5rem; }
+.img-grid-ngo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.img-ngo-main { grid-column: 1 / -1; width: 100%; height: 300px; object-fit: cover; border-radius: 12px; }
+.img-ngo-sub { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; }
+.stats-colored { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-around; font-family: system-ui, -apple-system, sans-serif; }
+.stat-item { text-align: center; }
+.stat-num { display: block; font-size: 2.5rem; font-weight: 900; line-height: 1.2; }
+.stat-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
+.c-blue { color: #0284c7; }
+.c-orange { color: #ea580c; }
+.c-green { color: #16a34a; }
+
+.portal-premium { background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; position: relative; overflow: hidden; transition: var(--transition); }
+.portal-premium::after { content: ''; position: absolute; top: -50%; right: -50%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: 0; pointer-events: none; }
+.portal-premium:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.06); transform: translateY(-5px); border-color: rgba(16,185,129,0.3); }
+.portal-content { position: relative; z-index: 1; }
+.btn-portal { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(to left, var(--primary), #059669); color: white; padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; transition: transform 0.3s; margin-top: auto; align-self: flex-start;}
+.portal-premium:hover .btn-portal { transform: translateX(-5px); }
+
+.testi-card { position: relative; background: #fff; border: 1px solid rgba(0,0,0,0.04); border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.03); z-index: 1; overflow: hidden; transition: var(--transition); }
+.testi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+.quote-icon { position: absolute; top: 1.5rem; right: 2rem; font-size: 5rem; color: rgba(16,185,129,0.06); z-index: -1; line-height: 1; pointer-events: none; }
+.q-text { font-size: 1.1rem; color: #334155; line-height: 1.8; margin-bottom: 1.5rem; }
+
+.contact-modern { display: grid; grid-template-columns: 1fr 0.8fr; background: #fff; border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(0,0,0,0.03); }
+.contact-form-side { padding: 3rem; }
+.contact-info-side { padding: 3rem; background: var(--bg-soft); border-right: 1px solid rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: center; }
+.c-item-modern { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.icon-box { background: white; padding: 0.85rem; border-radius: 12px; color: var(--primary); font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.c-text h4 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.25rem; }
+.c-text p { color: var(--text-muted); font-size: 0.95rem; }
+
+.footer-ngo { background: #f8fafc; padding: 2rem 0; border-top: 1px solid #e2e8f0; }
+.footer-wrapper { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { display: flex; align-items: center; gap: 1rem; }
+.footer-brand span { font-weight: 900; color: #0f172a; font-size: 1.25rem; letter-spacing: -0.5px; }
+.footer-brand .msg { font-size: 0.9rem; color: #64748b; font-weight: 500; }
+.footer-links-small { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; font-weight: 600; }
+.footer-links-small a { color: #64748b; text-decoration: none; transition: color 0.2s; }
+.footer-links-small a:hover { color: var(--primary); }
+
+@media (max-width: 900px) {
+    .story-ngo-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-modern { grid-template-columns: 1fr; }
+    .contact-info-side { border-right: none; border-top: 1px solid rgba(0,0,0,0.03); }
+    .footer-wrapper { flex-direction: column; text-align: center; justify-content: center; }
+    .footer-brand { flex-direction: column; }
+    .footer-links-small { flex-wrap: wrap; justify-content: center; }
+}
