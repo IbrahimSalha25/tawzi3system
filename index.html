@@ -1,850 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tawzi3 - نظام إدارة مراكز الإيواء الذكي</title>
-    <meta
-      name="description"
-      content="Tawzi3 هو الحل الأمثل لإدارة مراكز الإيواء وتنظيم التوزيع بكفاءة واحترافية."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Outfit:wght@400;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="assets\logo.png" type="image/png" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <a href="#" class="logo">
-          <img src="assets/logo.png" alt="Tawzi3 Logo" class="logo-img" />
-        </a>
-        <div class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fa-solid fa-bars"></i>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توزيع | Tawzi3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-noise"></div>
+    <header class="header js-header">
+        <div class="container header-container">
+            <a href="#" class="brand">
+                <i class="ph-fill ph-package"></i> Tawzi3
+            </a>
+            <nav class="nav js-nav">
+                <a href="#problem">المشكلة</a>
+                <a href="#solution">الحل</a>
+                <a href="#features">المميزات</a>
+                <a href="#impact">الأثر</a>
+                <a href="#contact" class="btn btn-sm btn-primary">تواصل معنا</a>
+            </nav>
+            <button class="mobile-btn js-mobile-btn"><i class="ph ph-list"></i></button>
         </div>
-        <nav class="nav" id="mainNav">
-          <div class="close-nav-btn" id="closeNavBtn">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <a href="#about">عن البرنامج</a>
-          <a href="#features">المميزات</a>
-          <a href="#support">ساهم معنا</a>
-          <a href="#contact">تواصل معنا</a>
-        </nav>
-        <div class="nav-overlay" id="navOverlay"></div>
-        <a
-          href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
-          target="_blank"
-          class="btn btn-primary"
-          >تحميل النظام</a
-        >
-      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            نظام توزيع <span class="gradient-text">"Tawzi3"</span> <br />
-            إدارة ذكية وإنسانية لمراكز الإيواء
-          </h1>
-          <p class="hero-subtitle">
-            نحو إدارة ذكية وإنسانية لمراكز الإيواء. صون كرامة المستفيدين وضمان
-            وصول المساعدات لمستحقيها.
-          </p>
-          <div class="hero-buttons">
-            <a
-              href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
-              target="_blank"
-              class="btn btn-primary btn-lg"
-              >حمّل البرنامج الآن</a
-            >
-            <a href="#about" class="btn btn-secondary btn-lg">عن البرنامج</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="image-wrapper">
-            <img src="assets/mockup_dashboard.png" alt="واجهة نظام توزيع" />
-            <div class="glow-effect"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1. About Section -->...
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2 class="section-title text-right">عن البرنامج</h2>
-            <p class="pj">
-              <strong>"توزيع" (Tawzi3)</strong> ليس مجرد برنامج، بل هو
-              <span class="highlight">منظومة رقمية ذكية</span> ولدت من رحم
-              الحاجة في مراكز الإيواء. جاء النظام ليضع حداً للفوضى الورقية،
-              ويستبدل طوابير الانتظار الطويلة بآليات تحقق رقمية فائقة السرعة.
-            </p>
-            <p class="pj">
-              نحن نؤمن بأن <strong>التكنولوجيا يجب أن تخدم الإنسانية</strong>،
-              لذلك صممنا هذا النظام ليكون:
-            </p>
-
-            <div class="about-features">
-              <div class="a-feature">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                  <strong>آمن وموثوق</strong>
-                  <span>حماية كاملة لبيانات العائلات وخصوصيتهم.</span>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span class="badge">نظام إدارة المساعدات</span>
+                    <h1 class="title">نظّم توزيع المساعدات في مخيمك خلال <span class="highlight">دقائق…</span> وليس ساعات</h1>
+                    <p class="subtitle">نظام <strong>Tawzi3</strong> يحوّل الفوضى إلى عملية توزيع سريعة، دقيقة، وشفافة، حتى بدون إنترنت.</p>
+                    <ul class="hero-list">
+                        <li><i class="ph-bold ph-check"></i> توزيع خلال ثواني عبر QR</li>
+                        <li><i class="ph-bold ph-check"></i> تتبع كامل لكل مستفيد وكل طرد</li>
+                        <li><i class="ph-bold ph-check"></i> يعمل بدون إنترنت 100%</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">🚀 ابدأ الآن</a>
+                        <a href="#contact" class="btn btn-outline">📞 عرض توضيحي</a>
+                    </div>
                 </div>
-              </div>
-              <div class="a-feature">
-                <i class="fa-solid fa-wifi"></i>
-                <div>
-                  <strong>يعمل بلا إنترنت</strong>
-                  <span>استمرار العمليات حتى في حال انقطاع الشبكة.</span>
+                <div class="hero-visual reveal" style="transition-delay: 0.2s">
+                    <div class="mockup-card">
+                        <div class="m-head">بحث عن مستفيد...</div>
+                        <div class="m-body">
+                            <div class="m-row success"><i class="ph-fill ph-check-circle"></i> تم الاستلام</div>
+                            <div class="m-row pending"><i class="ph-fill ph-clock"></i> في الانتظار</div>
+                        </div>
+                        <div class="m-badge tag-1"><i class="ph-fill ph-qr-code"></i> مسح سريع</div>
+                        <div class="m-badge tag-2"><i class="ph-fill ph-wifi-slash"></i> أوفلاين</div>
+                    </div>
                 </div>
-              </div>
-              <div class="a-feature">
-                <i class="fa-solid fa-fingerprint"></i>
-                <div>
-                  <strong>دقة متناهية</strong>
-                  <span>منع التكرار وضمان العدالة في التوزيع 100%.</span>
+            </div>
+        </section>
+
+        <section id="problem" class="problem section">
+            <div class="container relative">
+                <div class="sec-head reveal text-center">
+                    <h2 class="title">عندما تكون السرعة والدقة ضرورة… <span class="highlight-err">الأنظمة تفشل</span></h2>
+                    <p class="subtitle">في بيئات العمل الإنساني، أي خطأ يؤدي لحرمان مستفيد أو ازدواجية.</p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-visual">
-            <div class="visual-circle"></div>
-            <div class="icon-overlay">
-              <i class="fa-solid fa-circle-nodes"></i>
-            </div>
-            <!-- Decorative Elements -->
-            <div class="floating-badge top">
-              <i class="fa-solid fa-database"></i> قاعدة بيانات مركزية
-            </div>
-            <div class="floating-badge bottom">
-              <i class="fa-solid fa-qrcode"></i> مسح QR ذكي
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. Vision Section -->
-    <section id="vision" class="vision">
-      <div class="container">
-        <div class="vision-content">
-          <div class="vision-icon">
-            <i class="fa-solid fa-eye"></i>
-          </div>
-          <div class="vision-text">
-            <h2 class="section-title">الرؤية</h2>
-            <p>
-              قيادة التحول الرقمي في العمل الإنساني داخل مراكز الإيواء، لضمان
-              أعلى معايير <strong>الشفافية والمصداقية</strong>. نسعى لجعل عمليات
-              الإغاثة في قطاع غزة والمنطقة أكثر تنظيماً وإنسانية، بما يضمن حفظ
-              كرامة الإنسان وتوثيق وصول الحقوق لأصحابها.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. Mobile App Showcase -->
-    <section id="app-showcase" class="app-showcase">
-      <div class="container">
-        <div class="app-content">
-          <div class="app-info">
-            <span class="badge">جديد: تطبيق المستفيد</span>
-            <h2 class="section-title text-right">حقك تعرف... وحقك تتابع...</h2>
-            <p class="pj">
-              أطلقنا تطبيق الجوال الخاص بالمستفيدين داخل المخيمات، ليكون نافذتك
-              لمعرفة:
-            </p>
-            <ul class="app-features-list">
-              <li><i class="fa-solid fa-circle-check"></i> ماذا استلمت؟</li>
-              <li><i class="fa-solid fa-circle-check"></i> ماذا لم تستلم؟</li>
-              <li>
-                <i class="fa-solid fa-circle-check"></i> ومتى موعد التوزيع؟
-              </li>
-            </ul>
-            <div class="download-container">
-              <!-- <div class="qr-box">
-                <img src="assets/app_qr.png" alt="QR Code" class="qr-img" />
-                <span>مسح للتحميل</span>
-              </div> -->
-              <div class="download-text">
-                <p>حمّله الآن.. وراقب توزيعاتك</p>
-                <a
-                  href="https://www.mediafire.com/file/lnle9vp4hyab7zf/Tawzi3.apk/file"
-                  class="btn btn-primary"
-                >
-                  <i class="fa-brands fa-android"></i> تحميل مباشر (APK)
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="app-mockups">
-            <div class="mockup-wrapper">
-              <img
-                src="assets/tawzi3_app_mockup.png"
-                alt="Tawzi3 App Mockups"
-                class="main-mockup"
-              />
-              <div class="mockup-glow"></div>
-            </div>
-          </div>
-        </div>
-        <div class="app-footer-note">
-          <p>
-            * هذا التطبيق مخصص لمستفيدي المخيم ومتكامل مع نظام Tawzi3 الحاسوبي.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Features Section -->
-    <section id="features" class="features">
-      <div class="container">
-        <h2 class="section-title">مميزات النظام</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <h3>إدارة بيانات المستفيدين</h3>
-            <p>
-              تسجيل وإدخال البيانات الأساسية للأسر والأفراد، مع إمكانية عرض
-              التكوين الأسري وتفاصيل كل حالة.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h3>التوزيع الذكي والسريع</h3>
-            <p>
-              آلية توزيع للطرود تعتمد على مسح بطاقة المستفيد (QR Code) لضمان
-              السرعة ومنع التكرار.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-id-card"></i>
-            </div>
-            <h3>إصدار البطاقات</h3>
-            <p>
-              توليد ملفات جاهزة للطباعة لبطاقات المستفيدين داخل المخيم بشكل آلي
-              ومنظم.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-boxes-stacked"></i>
-            </div>
-            <h3>إدارة المخزون والطرود</h3>
-            <p>تتبع حركة الطرود الواردة والصادرة داخل المخيم بدقة.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-chart-pie"></i>
-            </div>
-            <h3>التقارير والإحصائيات</h3>
-            <p>
-              لوحة بيانية تفاعلية وكشوفات دورية مفصلة (Excel, PDF) لتعزيز
-              الشفافية ودعم اتخاذ القرار.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <h3>المزامنة السحابية</h3>
-            <p>
-              حفظ ومزامنة البيانات سحابياً (Cloud Sync) لضمان عدم ضياعها وسهولة
-              الوصول إليها من أي مكان.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Impact -->
-    <section id="impact" class="impact">
-      <div class="container">
-        <h2 class="section-title">أثر "توزيع"</h2>
-        <p class="section-subtitle">(أرقام حية تعكس واقع الإنجاز)</p>
-        <div class="impact-grid">
-          <div class="impact-item">
-            <div class="impact-icon">
-              <i class="fa-solid fa-tents"></i>
-            </div>
-            <div class="number" data-target="8">+08</div>
-            <div class="label">مخيم ومركز إيواء</div>
-          </div>
-          <div class="impact-item">
-            <div class="impact-icon">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <div class="number" data-target="1100">+1100</div>
-            <div class="label">مستفيد</div>
-          </div>
-          <div class="impact-item">
-            <div class="impact-icon">
-              <i class="fa-solid fa-id-card"></i>
-            </div>
-            <div class="number" data-target="1800">+1800</div>
-            <div class="label">بطاقة ذكية مصدرة</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Success Story Section -->
-    <section id="success-story" class="success-story">
-      <div class="container">
-        <div class="success-card">
-          <div class="success-content">
-            <div class="success-header">
-              <span class="badge">قصة نجاح</span>
-              <h2>مبادرة "خليها توصل"</h2>
-            </div>
-
-            <p>
-              قصة نجاح ملهمة سطرها نظام <strong>Tawzi3</strong> بالتعاون مع
-              برنامج <strong>يلا تشينج</strong> في المنتدى الاجتماعي التنموي.
-              المبادرة التي انطلقت تحت شعار <strong>"خليها توصل"</strong> لم تكن
-              مجرد تحديث تقني، بل كانت ثورة في مفاهيم العدالة والشفافية داخل
-              مراكز الإيواء.
-            </p>
-
-            <p>
-              من خلال تزويد المراكز بالنظام، وطباعة بطاقات ذكية للمستفيدين،
-              وتدريب الطواقم، نجحنا في تحويل الفوضى إلى نظام دقيق يضمن وصول
-              المساعدات لمستحقيها بكرامة. كما لعبت التوعية المجتمعية دوراً
-              حاسماً في تعزيز الثقة بين الإدارة والأهالي، وتقليل الازدحام بشكل
-              غير مسبوق.
-            </p>
-
-            <div class="partners-logos">
-              <h5>شركاء النجاح:</h5>
-              <div class="logos-grid">
-                <img
-                  src="assets/sdf-logo.png"
-                  alt="المنتدى الاجتماعي التنموي"
-                  title="المنتدى الاجتماعي التنموي"
-                />
-                <img
-                  src="assets/yalla_change_logo.jpg"
-                  alt="يلا تشينج"
-                  title="يلا تشينج"
-                />
-                <img src="assets/logo.png" alt="Tawzi3" title="Tawzi3" />
-              </div>
-            </div>
-            <div class="success-stats">
-              <div class="stat">
-                <i class="fa-solid fa-stopwatch"></i>
-                <span>سرعة قياسية</span>
-              </div>
-              <div class="stat">
-                <i class="fa-solid fa-check-double"></i>
-                <span>دقة 100%</span>
-              </div>
-            </div>
-          </div>
-          <div class="success-visual">
-            <!-- Event Images Gallery -->
-            <div class="success-gallery">
-              <div class="gallery-item large">
-                <img src="assets/image_01.jpeg" alt="جانب من التوزيع" />
-              </div>
-              <div class="gallery-item">
-                <img src="assets/image_02.jpeg" alt="جانب من التوزيع" />
-              </div>
-              <div class="gallery-item">
-                <img src="assets/image_03.jpeg" alt="جانب من التوزيع" />
-              </div>
-            </div>
-
-            <div class="card-glow"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Testimonials Section (Professional Carousel) -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <h2 class="section-title">قالوا عن "توزيع"</h2>
-
-        <div class="testimonials-wrapper">
-          <!-- Main carousel container -->
-          <div class="testimonials-container">
-            <div class="testimonials-track" id="testimonialsTrack">
-              <!-- Card 1 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
+                <div class="cards-grid stagger">
+                    <div class="card err-card">
+                        <i class="ph-duotone ph-hourglass-high"></i>
+                        <h3>بطء التسجيل</h3>
+                        <p>تأخير في التوثيق وفوضى أثناء التوزيع.</p>
+                    </div>
+                    <div class="card err-card">
+                        <i class="ph-duotone ph-users-three"></i>
+                        <h3>فوضى التوزيع</h3>
+                        <p>طوابير خالية من التنظيم والشفافية.</p>
+                    </div>
+                    <div class="card err-card">
+                        <i class="ph-duotone ph-copy"></i>
+                        <h3>ازدواجية البيانات</h3>
+                        <p>استلام أكثر من حصة بسبب نقص التتبع.</p>
+                    </div>
+                    <div class="card err-card">
+                        <i class="ph-duotone ph-eye-closed"></i>
+                        <h3>ضعف الشفافية</h3>
+                        <p>غياب الإحصائيات الدقيقة حول المستفيدين.</p>
+                    </div>
                 </div>
-                <p class="testimonial-text">
-                  "ساهم النظام في تسهيل عملية التوزيع، ومعرفة عدد الأسر الموجودة
-                  داخل المخيم، والحد من التكدس أثناء عملية التوزيع، بالإضافة إلى
-                  تسهيل وصول الكابونات إلى جميع المستفيدين بشكل منظم وعادل."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <img
-                      src="assets\photo_feadback_01.jpeg"
-                      alt="مدير مركز إيواء"
-                    />
-                  </div>
-                  <div class="author-info">
-                    <h4>م. مظفر يونس</h4>
-                    <span>مدير أحد مراكز الإيواء</span>
-                  </div>
+                <div class="banner reveal mt-3 text-center">الحقيقة: أنت لا تدير بيانات فقط… أنت تدير مسؤولية إنسانية.</div>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section id="solution" class="solution section bg-dark">
+            <div class="container dual-grid">
+                <div class="sol-visual reveal">
+                    <div class="poly"><i class="ph-fill ph-shield-check"></i> دقة 100%</div>
                 </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
+                <div class="sol-text reveal" style="transition-delay: 0.1s">
+                    <span class="badge border">الحل</span>
+                    <h2 class="title text-white">نظام مصمم لواقع العمل الإنساني</h2>
+                    <p class="subtitle text-light">نظام متكامل لبيئات الطوارئ. لا مجال للخطأ، لا وقت للتأخير.</p>
+                    <ul class="checklist mt-2 text-white">
+                        <li><i class="ph-fill ph-check-circle"></i> تنظيم بيانات المستفيدين</li>
+                        <li><i class="ph-fill ph-check-circle"></i> إدارة عمليات التوزيع</li>
+                        <li><i class="ph-fill ph-check-circle"></i> تتبع فوري ولحظي</li>
+                        <li><i class="ph-fill ph-check-circle"></i> شفافية مقبلة للداعمين</li>
+                    </ul>
+                    <div class="result-box mt-3 text-white">النتيجة: تحكم كامل في كل مستفيد، وكل عملية توزيع.</div>
                 </div>
-                <p class="testimonial-text">
-                  "أصبحت عملية التوزيع أكثر عدالة وإنصافًا للجميع، مع ضمان
-                  الاستلام في الوقت المناسب وبدون أي تكدس."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <img
-                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hassan&backgroundColor=d1d4f9"
-                      alt="أحد المستفيدين"
-                    />
-                  </div>
-                  <div class="author-info">
-                    <h4>جابر سليمان</h4>
-                    <span>أحد المستفيدين</span>
-                  </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="sec-head reveal text-center">
+                    <h2 class="title">المميزات الأساسية</h2>
+                    <p class="subtitle">كل ما تحتاجه… في مكان واحد</p>
                 </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="testimonial-card">
-                <div class="quote-icon">
-                  <i class="fa-solid fa-quote-right"></i>
+                <div class="grid-3 stagger">
+                    <div class="card f-card"><i class="ph-duotone ph-address-book"></i> <h3>إدارة المستفيدين</h3> <p>إدخال ومتابعة بكل سهولة.</p></div>
+                    <div class="card f-card"><i class="ph-duotone ph-globe"></i> <h3>تسجيل إلكتروني</h3> <p>رابط تسجيل ذكي للمخيم.</p></div>
+                    <div class="card f-card highlight"><i class="ph-duotone ph-qr-code"></i> <h3>توزيع ممسوح QR</h3> <p>مسح، وتأكيد في ثانية.</p></div>
+                    <div class="card f-card"><i class="ph-duotone ph-package"></i> <h3>إدارة المساعدات</h3> <p>تخصيص الحصص وتتبعها.</p></div>
+                    <div class="card f-card"><i class="ph-duotone ph-chart-bar"></i> <h3>تقارير وإحصائيات</h3> <p>من استلم، والحصص الباقية.</p></div>
+                    <div class="card f-card"><i class="ph-duotone ph-file-pdf"></i> <h3>ملفات PDF للطباعة</h3> <p>قوائم مهيأة لتسهيل الميدان.</p></div>
                 </div>
-                <p class="testimonial-text">
-                  "نظام التسجيل والإحصاء سلس جدًا، ويسهّل علينا التعامل مع أعداد
-                  كبيرة من الأشخاص والبيانات الإحصائية، كما يساعد بشكل أكبر على
-                  حصر الفئات الموجودة. إضافةً إلى ذلك، يساهم بشكل فعّال في تنظيم
-                  عملية توزيع الطرود بشكل أفضل."
-                </p>
-                <div class="testimonial-author">
-                  <div class="author-avatar">
-                    <img
-                      src="assets\photo_feadback_02.png"
-                      alt="متطوعة ميدانية"
-                    />
-                  </div>
-                  <div class="author-info">
-                    <h4>علي الأسود</h4>
-                    <span>متطوع ميدانية</span>
-                  </div>
+            </div>
+        </section>
+
+        <!-- Offline -->
+        <section class="offline section bg-soft">
+            <div class="container">
+                <div class="offline-card reveal text-center">
+                    <h2 class="title text-error"><i class="ph-bold ph-wifi-slash"></i> يعمل بدون إنترنت</h2>
+                    <p class="subtitle">لأن العمل الإنساني لا ينتظر الشبكة، يستمر التوزيع بكفاءته، ويزامن لاحقاً.</p>
                 </div>
-              </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Navigation Controls -->
-          <button
-            class="carousel-control prev"
-            id="prevBtn"
-            aria-label="السابق"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-          <button
-            class="carousel-control next"
-            id="nextBtn"
-            aria-label="التالي"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-        </div>
+        <!-- Steps Timeline -->
+        <section class="steps section">
+            <div class="container text-center">
+                <div class="sec-head reveal">
+                    <h2 class="title">كيف يعمل؟</h2>
+                    <p class="subtitle">5 خطوات للنجاح.</p>
+                </div>
+                <div class="timeline reveal">
+                    <div class="t-step"><span>1</span> المستفيدين</div>
+                    <div class="t-step"><span>2</span> التسجيل</div>
+                    <div class="t-step"><span>3</span> التخصيص</div>
+                    <div class="t-step"><span>4</span> توزيع QR</div>
+                    <div class="t-step"><span>5</span> التقارير</div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Indicators/Dots -->
-        <div class="carousel-indicators" id="carouselIndicators"></div>
-      </div>
-    </section>
+        <!-- Impact -->
+        <section id="impact" class="impact section dual-grid container">
+            <div class="card info-card reveal">
+                <i class="ph-fill ph-device-mobile"></i>
+                <h3 class="title">تطبيق المستفيد</h3>
+                <p>شفافية عالية بمتابعة ما تم استلامه ومابقي للطلب.</p>
+            </div>
+            <div class="card info-card dark reveal" style="transition-delay:0.1s">
+                <i class="ph-fill ph-chart-polar"></i>
+                <h3 class="title text-white">الأثر بأرقام</h3>
+                <div class="stats">
+                    <div class="stat">+8<span>مراكز إيواء</span></div>
+                    <div class="stat">+1100<span>مستفيد</span></div>
+                    <div class="stat">+1800<span>بطاقة</span></div>
+                </div>
+            </div>
+        </section>
 
-    <!-- 7. Target Audience -->
-    <section id="audience" class="audience">
-      <div class="container">
-        <h2 class="section-title">الفئات المستهدفة والقيمة المضافة</h2>
-        <div class="audience-grid">
-          <div class="audience-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-campground"></i>
+        <!-- Testimonials -->
+        <section class="testimonials section bg-soft">
+            <div class="container">
+                <div class="sec-head reveal text-center"><h2 class="title">ماذا يقولون؟</h2></div>
+                <div class="grid-3 stagger">
+                    <div class="testi-card">"توزيع خلال وقت قياسي بدون ازدحام." - مدير مركز</div>
+                    <div class="testi-card">"عملية عادلة وكل مستفيد أخذ حقه." - مستفيد</div>
+                    <div class="testi-card">"إدارة أعداد كبيرة بسهولة وسهولة." - متطوع</div>
+                </div>
             </div>
-            <h3>إدارات مخيمات الإيواء</h3>
-            <ul>
-              <li><strong>الهدف:</strong> تسهيل وتسريع العمليات اليومية.</li>
-              <li>
-                <strong>القيمة:</strong> تنظيم صفوف الانتظار، تقليل الجهد
-                البشري، وضمان دقة وصول المساعدات للنازحين دون فوضى.
-              </li>
-            </ul>
-          </div>
-          <div class="audience-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-hand-holding-heart"></i>
-            </div>
-            <h3>المؤسسات الإغاثية والمانحة</h3>
-            <ul>
-              <li><strong>الهدف:</strong> الإشراف والمتابعة.</li>
-              <li>
-                <strong>القيمة:</strong> القدرة على تتبع عدة مخيمات تابعة
-                للمؤسسة من خلال قاعدة بيانات مركزية، مما يعزز الرقابة والشفافية.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 9. Support & Donate -->
-    <section id="support" class="support">
-      <div class="container">
-        <h2 class="section-title">ساهم معنا</h2>
-        <p class="section-intro">
-          نحن نؤمن بقوة المجتمع في دعم العمل الإنساني. يمكنك المساهمة في تطوير
-          "توزيع" عبر:
-        </p>
-        <div class="support-grid">
-          <div class="support-card featured">
-            <h3>كفالة مخيم</h3>
-            <div class="support-visual">
-              <div class="amount">150$</div>
-            </div>
-            <p>تغطية تكاليف تشغيل النظام لمركز إيواء كامل.</p>
-            <a
-              href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D9%83%D9%81%D8%A7%D9%84%D8%A9%20%D9%85%D8%AE%D9%8A%D9%85%20%D8%A3%D9%88%20%D8%A7%D9%84%D8%AA%D8%A8%D8%B1%D8%B9%20%D9%84%D8%AF%D8%B9%D9%85%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
-              target="_blank"
-              class="btn btn-primary"
-              >كفالة الآن</a
-            >
-          </div>
-          <div class="support-card">
-            <h3>دعم التطوير</h3>
-            <div class="support-visual">
-              <div class="icon-box">
-                <i class="fa-solid fa-code"></i>
-              </div>
-            </div>
-            <p>المساهمة في تكاليف السيرفرات وتطوير خصائص جديدة للنظام.</p>
-            <a
-              href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D9%81%D9%8A%20%D8%AF%D8%B9%D9%85%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
-              target="_blank"
-              class="btn btn-secondary"
-              >ادعم التطوير</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Contact & Audience -->
+        <section id="contact" class="contact section text-center">
+             <div class="container reveal">
+                 <h2 class="title">لمن هذا النظام؟</h2>
+                 <p class="subtitle pb-3">مراكز الإيواء | المؤسسات الإنسانية | فرق الطوارئ</p>
+                 <div class="cta-box bg-dark text-white p-3 rounded">
+                      <h3 class="mb-2">ابدأ الآن بتطبيق النظام</h3>
+                      <p class="mb-3">وفر وقتك وحقق الشفافية العالية بالكامل.</p>
+                      <button class="btn btn-primary">🚀 تواصل معنا (+970XXXXXXXXX)</button>
+                 </div>
+             </div>
+        </section>
 
-    <!-- 9. Call to Action -->
-    <section id="download" class="cta">
-      <div class="container">
-        <h2 class="section-title">ابدأ باستخدام "توزيع"</h2>
-        <div class="cta-grid">
-          <div class="cta-item">
-            <h3>للمخيمات</h3>
-            <p>
-              انقل إدارة مخيمك إلى مستوى جديد من التنظيم والسرعة. احفظ كرامة
-              المستفيدين ووفر جهد فريقك.
-            </p>
-            <a
-              href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D9%86%D8%B3%D8%AE%D8%A9%20%D9%85%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%AA%D9%88%D8%B2%D9%8A%D8%B9."
-              target="_blank"
-              class="btn btn-primary"
-              >حمّل البرنامج الآن</a
-            >
-          </div>
-          <div class="cta-item">
-            <h3>للمؤسسات</h3>
-            <p>
-              عزز الشفافية في مشاريعك الإغاثية وتابع عمليات التوزيع لحظة بلحظة.
-            </p>
-            <a
-              href="https://wa.me/970595451125?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%B4%D8%B1%D8%A7%D9%83%D8%A9%20%D8%A3%D9%88%20%D8%AA%D8%B9%D8%A7%D9%88%D9%86%20%D9%85%D8%A4%D8%B3%D8%B3%D9%8A."
-              target="_blank"
-              class="btn btn-secondary"
-              >تواصل معنا للشراكة</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
+    </main>
 
-    <!-- 10. Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="contact-wrapper">
-          <div class="contact-info">
-            <h3>لنتحدث سوياً</h3>
-            <p>نحن هنا للإجابة على استفساراتكم ومناقشة سبل التعاون.</p>
-            <div class="info-item">
-              <div>
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <span>&nbsp;970&nbsp;595&nbsp;451&nbsp;125+&nbsp;</span>
-            </div>
-            <div class="info-item">
-              <div>
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <span>ibrahimsalha19@gmail.com</span>
-            </div>
-            <div class="info-item">
-              <div>
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <span>غزة، فلسطين</span>
-            </div>
-          </div>
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <input
-                type="text"
-                name="entry.987891736"
-                placeholder="الاسم"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="email"
-                name="entry.1851178665"
-                placeholder="البريد الإلكتروني"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="tel"
-                name="entry.456116727"
-                placeholder="رقم الهاتف"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <textarea
-                name="entry.763549956"
-                placeholder="الرسالة"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
-            <p class="form-message" id="formMessage"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- 11. Links & Contact & Footer -->
-    <footer id="main-footer" class="footer-extended">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h3>روابط هامة</h3>
-            <ul>
-              <!-- <li><a href="#">شاركنا رأيك</a></li> -->
-              <li><a href="https://t.me/ibrahim_salha19">LinkedIn</a></li>
-              <li>
-                <a href="https://github.com/IbrahimSalha25" target="_blank"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a href="mailto:ibrahimsalha19@gmail.com">البريد الإلكتروني</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3>التوثيق والدعم</h3>
-            <ul>
-              <li><a href="#">دليل الاستخدام</a></li>
-              <li><a href="#" id="licenseLink">اتفاقية الترخيص</a></li>
-              <li><a href="#" id="privacyLink">سياسة الخصوصية</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <p>&copy; 2025 Tawzi3 System. جميع الحقوق محفوظة.</p>
-        </div>
-      </div>
+    <footer class="footer bg-dark text-white text-center p-3">
+        <p>&copy; 2026 Tawzi3. نظام إدارة المساعدات. (فلسطين)</p>
     </footer>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>سياسة الخصوصية لبرنامج Tawzi3</h2>
-          <span class="close-modal">&times;</span>
-        </div>
-        <div class="modal-body">
-          <p>
-            نحن نحترم خصوصيتك ونلتزم بحماية البيانات التي تجمعها أثناء استخدام
-            برنامج Tawzi3.
-          </p>
-
-          <h3>1. البيانات التي نجمعها</h3>
-          <p>
-            <strong>بيانات الحساب الأساسية:</strong> (الاسم، البريد الإلكتروني،
-            رقم الهاتف).
-          </p>
-          <p>
-            <strong>بيانات التوزيع:</strong> (مثل الأسماء، الأماكن، أعداد
-            المستفيدين) والتي تُستخدم فقط لأغراض إدارة العمليات الإنسانية.
-          </p>
-
-          <h3>2. استخدام البيانات</h3>
-          <ul>
-            <li>
-              تُستخدم البيانات لتسهيل عمليات التوزيع، توليد التقارير، وتحليل
-              البيانات لتحسين العمل الإنساني.
-            </li>
-            <li>
-              لا يتم مشاركة بياناتك مع أي جهة خارجية دون موافقتك أو إلا إذا كانت
-              مطلوبة قانونيًا.
-            </li>
-          </ul>
-
-          <h3>3. حماية البيانات</h3>
-          <p>
-            نلتزم باتخاذ التدابير التقنية والتنظيمية اللازمة لحماية البيانات من
-            الوصول غير المصرح به أو التغيير أو الحذف.
-          </p>
-
-          <h3>4. مدة الاحتفاظ بالبيانات</h3>
-          <p>
-            نحتفظ بالبيانات فقط طالما كانت ضرورية لتحقيق أغراض البرنامج، أو حسب
-            المتطلبات القانونية المعمول بها.
-          </p>
-
-          <h3>5. حقوقك</h3>
-          <p>
-            يمكنك طلب الاطلاع على بياناتك أو تعديلها أو حذفها من خلال التواصل
-            معنا على:
-            <a href="mailto:ibrahimsalha19@gmail.com"
-              >ibrahimsalha19@gmail.com</a
-            >
-          </p>
-
-          <h3>6. التعديلات على السياسة</h3>
-          <p>
-            قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. ستظهر أي تغييرات داخل
-            البرنامج عند أول تشغيل بعد التحديث.
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary close-modal-btn">إغلاق</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- License Agreement Modal -->
-    <div id="licenseModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>اتفاقية ترخيص استخدام برنامج Tawzi3</h2>
-          <span class="close-modal close-license">&times;</span>
-        </div>
-        <div class="modal-body">
-          <p>
-            مرحبًا بك في برنامج <strong>Tawzi3</strong>، وهو برنامج مخصص لإدارة
-            عمليات التوزيع في مراكز الإيواء والمساعدات الإنسانية.<br />
-            يرجى قراءة الشروط التالية بعناية قبل استخدام البرنامج:
-          </p>
-
-          <h3>1. الترخيص والاستخدام</h3>
-          <ul>
-            <li>يحق للمستخدمين تجربة البرنامج مجانًا دون أي التزامات مالية.</li>
-            <li>
-              يُسمح باستخدام البرنامج في المشاريع والمخيمات الإنسانية غير
-              الربحية مجانًا، بشرط إبلاغ المطوّر قبل الاستخدام أو أثناءه لأغراض
-              التنسيق والمتابعة.
-            </li>
-            <li>
-              يُسمح للمخيمات الرسمية أو الجهات الممولة باستخدام البرنامج بمقابل
-              رمزي أو حسب اتفاق مسبق.
-            </li>
-            <li>
-              لا يجوز بيع أو إعادة توزيع أو تعديل البرنامج دون إذن كتابي من
-              المطوّر.
-            </li>
-          </ul>
-
-          <h3>2. الدعم والتحديثات</h3>
-          <ul>
-            <li>
-              يتم تقديم التحديثات والدعم الفني وفقًا لتفاهم مسبق مع المطوّر.
-            </li>
-            <li>
-              يحتفظ المطوّر بحق تعديل أو إيقاف تطوير البرنامج في أي وقت دون
-              إشعار مسبق.
-            </li>
-          </ul>
-
-          <h3>3. إخلاء المسؤولية</h3>
-          <ul>
-            <li>تم تصميم البرنامج لتسهيل إدارة عمليات التوزيع.</li>
-            <li>
-              لا يتحمل المطوّر أي مسؤولية عن أي أضرار مباشرة أو غير مباشرة قد
-              تنتج عن استخدام البرنامج أو الاعتماد على نتائجه.
-            </li>
-            <li>
-              استخدام البرنامج يعني موافقتك على هذه الشروط دون قيد أو شرط.
-            </li>
-          </ul>
-
-          <h3>4. التواصل</h3>
-          <p>للتواصل أو الحصول على ترخيص رسمي، يرجى المراسلة عبر:</p>
-          <p>
-            <strong>البريد الإلكتروني:</strong>
-            <a href="mailto:ibrahimsalha19@gmail.com"
-              >ibrahimsalha19@gmail.com</a
-            >
-          </p>
-          <p>
-            <strong>الهاتف (واتساب):</strong>
-            <a href="https://wa.me/970595451125" target="_blank"
-              >+970 595 451 125</a
-            >
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary close-modal-btn close-license-btn">
-            إغلاق
-          </button>
-        </div>
-      </div>
-    </div>
-
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
